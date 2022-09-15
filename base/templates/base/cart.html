@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container-sm">
+    <div class="container-fluid cart-first-container">
+      <div class="cart-image"><img src="/static/template/images/product_images/pic1.png" alt="" class="cart-chitr"></div>
+      <div class="cart-container">
+          <div class="cart-container-box">
+              <div class="cart-boxes-head">product</div>
+              <div class="cart-boxes-head">price</div>
+              <div class="cart-boxes-head">quantity</div>
+              <div class="cart-boxes-head">subtotal</div>
+          </div>
+          <div class="cart-container-box-details">
+              <div class="cart-boxes-hide chitr"><img src="/static/images/product_images/pic1.png" alt="" class="cart-chitr"></div>
+              <div class="cart-boxes cart-para"><p>Himvedas Keto Ultra Weight Loss Capsule</p></div>
+              <div class="cart-boxes"><p>Rs.2399</p></div>
+              <div class="cart-boxes">1</div>
+              <div class="cart-boxes">2400</div>
+          </div>
+      </div>
+      <div class="coupan-container">
+          <div class="coupan-input">
+              <div class="input-field gap">
+                  <input type="text" name="" id="" placeholder="Coupan No" class="form-control cpn-input">
+              </div>
+              <div class="coupan-btn gap"><button type="button" class="btn btn-outline-success cpn-btn">Apply Coupan</button>
+              </div>
+          </div>
+          <div class="update-cart gap"><button class="btn btn-outline-success update-cart">Update Cart</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="buynow-box container-sm pt-5">
+    <div class="grid"></div>
+    <div class="buynow-button-box">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" colspan="3">Cart Total</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Subtotal</td>
+            <td>5000</td>
+            
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>5000</td>
+          
+          </tr>
+          <tr>
+            <td scope="row" colspan="3">
+              <div class="Buy-now"><button class="btn btn-outline-success Buy-now">Proceed To Checkout</button></div>
+            </td>
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{%endblock%}

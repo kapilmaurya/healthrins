@@ -1,0 +1,145 @@
+{% extends 'main.html' %}
+{% block content %}
+<!-- Billing Content is here -->
+<div class="container-fluid">
+    <div class="billing-container-grid">
+        <div class="billing-details container">
+            <form class="billing-form">
+                <table>
+                    <tr>
+                        <th class="bill-details-table" colspan="2"><p class="billing-heading">Billing Details</p></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="firstname">
+                        </td>
+                        <td>
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="lastname"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="Companyname" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                        </td>
+                    </tr>
+                        <tr>
+                            <td colspan="2">
+                            <label for="Companyname" class="form-label">Country Code</label>
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="1">India</option>
+                                <option value="2">Sri lanka</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                                <label for="streetaddress" class="form-label">Town/City</label>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                            </td>
+                        </tr>
+                    <tr>
+                        <td colspan="2">
+                        <label for="Companyname" class="form-label">State</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Delhi</option>
+                            <option value="2">Janakpuri</option>
+                            <option value="3">Dwarka Mor</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                          <label for="streetaddress" class="form-label">Pincode</label>
+                          <input type="text" class="form-control" placeholder="Pincode" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                      </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                        <label for="streetaddress" class="form-label">Phone</label>
+                        <input type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                    </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                      <label for="streetaddress" class="form-label">Email</label>
+                      <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                  </td>
+              </tr>
+              <tr><th><h5>Additional Information</h5></th>
+                </tr>
+                <tr>
+                  <th colspan="3"><hr></th>
+                </tr>
+                <tr>
+                  <th colspan="3"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea></th>
+                </tr>
+                </table>
+              </form>
+        </div>
+        <!-- secondary container for order information -->
+        <div class="your-orders">
+          <div class="container">
+            <table class="table table-row-gap">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3"><b>Your Orders</b></th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Himvedas Keto Ultra Weight Loss Capsule  </td>
+                  <td>5000</td>
+                  
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td>5000</td>
+                  
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td>5000</td>
+                
+                </tr>
+
+                <!-- payment gateways -->
+                <tr>
+                  <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                      Direct Bank Transfer
+                    </label>
+                  </td>
+                </tr>
+                <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Check Paymnets
+                  </label>
+                </td>
+              </tr>
+              <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Cash on Delivery
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row" colspan="3">
+                <div class="Buy-now"><button class="btn btn-outline-success Buy-now">Proceed</button></div>
+              </td>
+            
+            </tr>
+              </tbody>
+              </table>
+          </div>
+          
+        </div>
+    </div>
+</div>
+{%endblock%}

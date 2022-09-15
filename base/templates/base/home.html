@@ -1,0 +1,146 @@
+{% extends 'main.html' %}
+{%block content%}
+<!-- main banner area -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/images/banner1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/banner2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/banner3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- banner area stop -->
+
+<!-- body content -->
+<div class="container mobile-responsive-container">
+  <div class="heading">Healthrins Weight Loss Keto Herbal Supplement</div>
+  <div class="para">Our Weight loss Keto capsule is a breakthrough way to burn fat and kick out the problems of
+    overweight. You can consume these Keto capsules at any age provided you should be above 18. The blend of natural
+    ingredients facilitates rapid fat loss and maintains your health. The product is also helpful in elevating
+    physical performance . The product boosts your metabolism, increases the energy level and improves muscle
+    development, and controls you from gorging on food . Overall, the product promotes general well-being. For
+    better start using these Keto capsules along with following Keto diet, within some days of consumption.</div>
+</div>
+</div>
+<hr class="divider">
+
+<!-- product area -->
+<div class="container-fluid mcontainer" id="product-anchor">
+<div class="pr-heading">Our Product</div>
+<div class="product">
+  <div class="pack">
+    <img src="/static/images/product_images/pic3.png" alt="" class="product-image">
+    <div class="product-title">
+      <h6>Weight Loss Keto Herbal Supplement Pack of 3 </h6>
+      <span class="price pr">Rs.7000</span>&nbsp &nbsp
+      <span class="sale-price pr">Rs.4000</span>
+    </div>
+  </div>
+  <div class="pack pack-big">
+    <a href="{% url 'product' %}"><img src="/static/images/product_images/pic1.png" alt="" class="product-image"></a>
+    <div class="product-title">
+      <h6>Weight Loss Keto Herbal Supplement Pack of 1 </h6>
+      <span class="price pr">Rs.7000</span>&nbsp &nbsp
+      <span class="sale-price pr">Rs.4000</span>
+    </div>
+  </div>
+  <div class="pack">
+    <img src="/static/images/product_images/pic2.png" alt="" class="product-image">
+    <div class="product-title">
+      <h6>Weight Loss Keto Herbal Supplement Pack of 2 </h6>
+      <span class="price pr">Rs.7000</span>&nbsp &nbsp
+      <span class="sale-price pr">Rs.4000</span>
+    </div>
+  </div>
+</div>
+</div>
+<hr class="divider">
+<!-- product area closed -->
+
+<!-- third section -->
+<div class="container graph-cont">
+<img src="/static/images/graph.png" alt="" class="graph-image">
+</div>
+<!-- third section close -->
+<hr class="divider">
+
+<!-- review section -->
+<div class="container">
+<div class="review-title heading">Review</div>
+<div class="stars">
+  <ion-icon name="star" class="star active"></ion-icon>
+  <ion-icon name="star" class="star active"></ion-icon>
+  <ion-icon name="star" class="star active"></ion-icon>
+  <ion-icon name="star" class="star active"></ion-icon>
+  <ion-icon name="star" class="star active "></ion-icon>
+</div>
+</div>
+
+
+<!-- ================================Testimonial Area================================ -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+<div class="carousel-indicators">
+  <button type="button" class="arrow" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+    aria-current="true" aria-label="Slide 1"></button>
+  <button type="button" class="arrow" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+    aria-label="Slide 2"></button>
+  <button type="button" class="arrow" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+    aria-label="Slide 3"></button>
+</div>
+<div class="mcarousel-inner">
+  <div class="mcarousel-item active">
+    <img src="" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Kapil</h3>
+      <p>Some representative placeholder content for the first slide.</p>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="..." class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Manisha</h3>
+      <p>Some representative placeholder content for the second slide.</p>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="..." class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Rohit</h3>
+      <p>Some representative placeholder content for the third slide.</p>
+    </div>
+  </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+
+{%endblock%}

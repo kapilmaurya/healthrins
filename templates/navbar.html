@@ -1,0 +1,152 @@
+{% load static %}
+<!-- navbar desinging -->
+<div class="container-fluid">
+  <!-- navbar desinging -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid navigation">
+      <a class="navbar-brand" href="#">Ketozine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}" for="product-anchor">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        
+        <div class="user-icons">
+          <a href="#" class="nav-icons" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <ion-icon name="person-circle"></ion-icon>
+          </a>
+          <a href="#" class="nav-icons">
+            <ion-icon name="cart"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ending of navbar -->
+</div>
+<!-- ending of navbar -->
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ketozine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <section class="text-center text-lg-start">
+
+
+          <!-- Jumbotron -->
+          <div class="container-fluid width-login py-4">
+            <div class="row g-0 align-items-center login-logout-separater">
+              <div class="signup">
+                <div class="card cascading-right" style="
+                background: hsla(0, 0%, 100%, 0.55);
+                backdrop-filter: blur(30px);
+                ">
+                  <div class="card-body p-5 shadow-5 text-center">
+                    <div class="row">
+
+                      <h2 class="fw-bold mb-5  col-6" style="background-color: black; color:white;" onclick=signupfunc()>Sign up</h2>
+                      <h2 class=" mb-5  col-6" style="background-color:gainsboro ; color:black;" onclick=signinfunc()>Login</h2>
+                    </div>
+                    <div class="login-signup-separtor" id="login-signup-separtor">
+                      <div class="signup" id="signup">
+                      <form class="signup-login" method="post" action="">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                          <input type="email" id="form3Example3" class="form-control" placeholder="Email address" name="email"/>
+
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+
+                              <input type="text" id="form3Example1" class="form-control" placeholder="First name" name="name" />
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+
+                              <input type="text" id="form3Example2" class="form-control" placeholder="Last name" name="lastname"/>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                          <input type="password" id="form3Example4" class="form-control" placeholder="Password" name="password" />
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="form-check d-flex justify-content-start mb-4">
+                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                          <label class="form-check-label" for="form2Example33">
+                            <b> I accept the Terms of Service and Privacy Policy </b>
+                          </label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="d-grid gap-2 col-9 mx-auto">
+                          <button class="btn btn-outline-dark" style="background-color: black; color:white;"
+                            type="button">Sign up</button>
+                        </div>
+                      </form>
+                    </div>
+                  <!-- login up code -->
+                  <div class="login container-fluid shadow-5" id="signin">
+                    <div class="form-outline mb-4 mt-4">
+                      <input type="email" id="form3Example3" class="form-control" placeholder="Email address" />
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example4" class="form-control" placeholder="Password" />
+                    </div>
+                    <div class="form-check d-flex justify-content-between mb-2">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <b> Remember me </b>
+                      <p>Forget password?</p>
+                    </div>
+                    <div class="d-grid gap-2 col-9 mx-auto">
+                      <button class="btn btn-outline-dark" style="background-color: black; color:white;"
+                        type="button">Sign in</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                
+
+              <!-- <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="/manisha_project/template/images/himvedas.jpeg" class="w-100 rounded-4 shadow-4"
+              alt="" />
+          </div> -->
+            </div>
+
+          </div>
+          <!-- Jumbotron -->
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
