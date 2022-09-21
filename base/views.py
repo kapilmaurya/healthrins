@@ -1,6 +1,9 @@
+from unicodedata import name
 from django.shortcuts import render
 from django.http import HttpResponse
+from urllib import request
 from django.contrib.auth.forms import UserCreationForm
+from base.models import *
 
 # Create your views here.
 def Home(request):
@@ -20,17 +23,15 @@ def Product(request):
 
 # creating usercreation form
 def signupPage(request):
-    form=UserCreationForm()
-    if request.method == 'POST':
-        form=UserCreationForm(request.POST)
-        if form.is_valid():
-            user=form.save(commit=False)
-            # user.username=user.username.lower()
-            user.save()
-            login(request,user)
-            return redirect('home')
-            # print('bhr hu')
-        else:
-            message.error(request,'error while registering')
-    context={'form':form}       
-    return render(request,'base/signup.html',context)
+    if request.method=='POST':
+        email=request.POST.get('email')
+        username=request.POST.get('username')
+        name= request.POST.get('name')
+        password=request.POST.get('password')
+        user=User.objects.create(username=username,email=email,password=password)
+        user.name=name
+        # user.lastname=lastname1
+        user.save()
+    
+
+    return render(request,'base/signup.html')

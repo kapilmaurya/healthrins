@@ -22,5 +22,22 @@
   <!-- icons JavaScript -->
   <script module src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="/static/js/main.js"></script>
+  // product change script
+  <script>
+var productimage=document.getElementById('product-page-image')
+            var productchange= document.getElementsByClassName("choti-images")
+            productchange[0].onclick=function(){
+                productimage.src=productchange[0].src
+            }
+            productchange[1].onclick=function(){
+                productimage.src=productchange[1].src
+            }
+            productchange[2].onclick=function(){
+                productimage.src=productchange[2].src
+            }
+            productchange[3].onclick=function(){
+                productimage.src=productchange[3].src
+            }
+          </script>
 </body>
 </html>

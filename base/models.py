@@ -1,5 +1,7 @@
+from tkinter import CASCADE
 from xml.parsers.expat import model
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -14,19 +16,30 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class User(models.Model):
-    Username=models.CharField(max_length=100)
+class Profile(models.Model):
+    User=models.OneToOneField(User,on_delete=models.CASCADE)
+    username=models.CharField(max_length=100)
+    email=models.CharField(max_length=200,unique=True)
+    name=models.CharField(max_length=100)
     Password=models.CharField(max_length=100)
-    First_name=models.CharField(max_length=100)
-    last_name=models.CharField(max_length=100)
-    telephone=models.DecimalField(max_digits=10,decimal_places=2)
+    # telephone=models.DecimalField(max_digits=10,decimal_places=2)
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
 
-class User_payments(models.Model):
-    user_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    payment_type=models.CharField(max_length=100)
-    account_no=models.DecimalField(max_digits=3,decimal_places=2)
+
+# class User(models.Model):
+#     Username=models.CharField(max_length=100)
+#     Password=models.CharField(max_length=100)
+#     First_name=models.CharField(max_length=100)
+#     last_name=models.CharField(max_length=100)
+#     telephone=models.DecimalField(max_digits=10,decimal_places=2)
+#     created_at=models.DateTimeField(auto_now=True)
+#     updated_at=models.DateTimeField(auto_now=True)
+
+# class User_payments(models.Model):
+#     user_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+#     payment_type=models.CharField(max_length=100)
+#     account_no=models.DecimalField(max_digits=3,decimal_places=2)
 
 class Address(models.Model):
     user_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -39,14 +52,14 @@ class Address(models.Model):
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
 
-class Shopping_session(models.Model):
-    user_id=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
-    total=models.DecimalField(max_digits=3,decimal_places=2)
-    created_at=models.DateTimeField(auto_now=True)
-    updated_at=models.DateTimeField(auto_now=True)
+# class Shopping_session(models.Model):
+#     user_id=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
+#     total=models.DecimalField(max_digits=3,decimal_places=2)
+#     created_at=models.DateTimeField(auto_now=True)
+#     updated_at=models.DateTimeField(auto_now=True)
 
 class Cart(models.Model):
-    session_id=models.ForeignKey(Shopping_session, on_delete=models.CASCADE, null=True)
+    user_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product_id=models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity=models.DecimalField(max_digits=3,decimal_places=2)
     created_at=models.DateTimeField(auto_now=True)
