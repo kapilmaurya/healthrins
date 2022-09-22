@@ -1,4 +1,5 @@
 # from tkinter import CASCADE
+from struct import pack
 from xml.parsers.expat import model
 from django.db import models
 from django.contrib.auth.models import User
@@ -7,8 +8,8 @@ from django.contrib.auth.models import User
 
 class Product(models.Model):
     name=models.CharField(max_length=500)
-    price=models.DecimalField(max_digits=4,decimal_places=2)
-    pack=models.CharField(max_length=100)
+    price=models.DecimalField(max_digits=7,decimal_places=2)
+    pack=models.CharField(max_length=20)
     sku=models.DecimalField(max_digits=3,decimal_places=2)
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -69,6 +70,7 @@ class Order_items(models.Model):
     # order_id=models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     product_id=models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity=models.DecimalField(max_digits=3,decimal_places=2)
+    # pack=models.CharField(max_length=20)
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
 

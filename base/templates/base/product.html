@@ -7,19 +7,19 @@
         <div class="big-image"><img src="/static/images/product_images/pic1.png" class="product-page-image" id="product-page-image" alt=""></div>
         <div class="small-images">
             <div class="small-img-col">
-            <img src="/static/images/product_images/pic3.png" alt="" class="choti-images">
+            <img src="/static/images/product_images/pic1.png" alt="" class="choti-images">
             </div>
             <div class="small-img-col">
                 <img src="/static/images/product_images/pic2.png" alt="" class="choti-images">
                 </div>
-            <div class="small-img-col">
+            <!-- <div class="small-img-col">
 
                 <img src="/static/images/product_images/pic2.png" alt="" class="choti-images">
             </div>
             <div class="small-img-col">
 
                 <img src="/static/images/product_images/pic2.png" alt="" class="choti-images">
-                    </div>
+                    </div> -->
             </div>
     </div>
     <div class="product-pricing-details">
@@ -27,7 +27,7 @@
             <h1>Himvedas Keto Ultra Weight Loss Capsule</h1>
         </div>
         <div class="product-details-div2">
-            <span class="product-price">Rs.4000</span><span class="sale-price">Rs.3500</span>
+            <span class="product-price">Rs.4000</span><span class="sale-price">Rs.{{product}}</span>
         </div>
         <div class="product-details-div4">
             <p>
@@ -44,14 +44,13 @@
         </div>
         <div class="product-details-div3">
             <span><input type="number" name="quantity" id="" value="1" class="quantity-box "></span>
-            <span><select class="form-select pack-select" aria-label="Default select example">
-                    <option selected>Pack of 1</option>
-                    <option value="1">Pack of 2</option>
-                    <option value="2">Pack of 3</option>
+            <span><select class="form-select pack-select" aria-label="Default select example" name="pack-select">
+                    <option selected value="1">Pack of 1</option>
+                    <option value="2">Pack of 2</option>
+                    <option value="3">Pack of 3</option>
                     <!-- <option value="3">Three</option> -->
                 </select></span>
-            <button type="button" class="btn btn-warning btn-buy-now">Buy Now</button>
-
+            <a href="{% url 'orderpage' %}"><button type="button" class="btn btn-warning btn-buy-now">Buy Now</button></a>
         </div>
     </div>
 </div>
