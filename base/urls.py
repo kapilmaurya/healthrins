@@ -10,5 +10,8 @@ urlpatterns = [
     path('product/', views.Product,name='product'),
     path('signup/', views.signupPage,name='signup'),
     path('Billing/', views.orderPage,name='orderpage'),
+    path('privacypolicy/', views.privacyPage,name='privacypolicy'),
+    path('terms&conditions/', views.termsPage,name='terms&conditions'),
+    path('returnrefund/', views.returnPage,name='returnrefund'),
 
 ]

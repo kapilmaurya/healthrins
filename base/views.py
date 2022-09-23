@@ -47,3 +47,10 @@ def product(request):
     return render(request,'base/product.html',context = {'product' : product})
 def orderPage(request):
     return render(request,'base/billing.html',)
+
+def privacyPage(request):
+    return render(request,'base/privacypolicy.html')
+def termsPage(request):
+    return render(request,'base/terms&condition.html')
+def returnPage(request):
+    return render(request,'base/returnrefund.html')

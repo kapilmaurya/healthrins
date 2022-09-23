@@ -620,5 +620,11 @@ td{
     flex-wrap: wrap;
 }
 
+/* editing policy anchor tag styling */
+.items>a{
+    color: white;
+    text-decoration: none;
+}
+
 
 
