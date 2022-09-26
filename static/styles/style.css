@@ -87,6 +87,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    align-self: center;
 }
 
 .pr {
@@ -301,17 +302,29 @@ ul {
         /* flex-direction: column; */
         flex-wrap: wrap;
         justify-content: center;
-        height: 20rem;
+        row-gap: 2rem;
+        /* height: 20rem; */
     }
     .product-image{
         width: 8rem;
         height: auto;
     }
+    .small-images{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        /* justify-content: center; */
+    }
+    .product-pricing-details{
+        width: 100%;
+    }
     .mcontainer{
         height: 60rem;
     }
     .pack{
-        height: 16rem;
+        height: auto;
         width: 20rem;
     }
     .price{
@@ -324,6 +337,10 @@ ul {
     .pack> .product-title> h6{
         font-weight: 600;
     }
+    .big-image{
+        height: auto;
+        padding-left: 8rem;
+    }
 
     .divider{
         margin-bottom: -20px;
@@ -335,7 +352,7 @@ ul {
         height: auto;
     }
     .graph-image{
-        width: 100%;
+        width: 170%;
         height: auto;
     }
 
@@ -364,7 +381,7 @@ ul {
 }
 
 .small-images{
-    width: 5rem;
+    width: 100%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -460,12 +477,15 @@ ul {
 .the30years-grid{
     width: 100%;
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr .5fr;
     align-items: center;
 }
 .the30years_container{
     justify-self: center;
+}
+.mobo-30years{
+    padding-top: 2rem;
 }
 .footer-links{
     display: grid;
@@ -530,6 +550,7 @@ ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         align-items: center;
+        align-self: center;
     }
 
     .footer-links {
@@ -623,6 +644,11 @@ td{
     width: 100%;
     height: auto;
 }
+.extra-size{
+    width: 150%;
+    height: auto;
+    margin-left: -2rem;
+}
 .the30years{
     display: flex;
     flex-wrap: wrap;
@@ -632,6 +658,11 @@ td{
 .items>a{
     color: white;
     text-decoration: none;
+}
+
+.contact-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 

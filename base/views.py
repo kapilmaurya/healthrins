@@ -54,3 +54,6 @@ def termsPage(request):
     return render(request,'base/terms&condition.html')
 def returnPage(request):
     return render(request,'base/returnrefund.html')
+
+def contactPage(request):
+    return render(request,'base/contact.html')
