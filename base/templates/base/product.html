@@ -27,7 +27,7 @@
             <h1>Himvedas Keto Ultra Weight Loss Capsule</h1>
         </div>
         <div class="product-details-div2">
-            <span class="product-price">Rs.4000</span><span class="sale-price">Rs.{{product}}</span>
+            <span class="product-price">Rs.4000</span><span class="sale-price">Rs.<span id="p-price">3500</span></span>
         </div>
         <div class="product-details-div4">
             <p>
@@ -42,16 +42,19 @@
 
             </p>
         </div>
+        <form action="" method="post">
+            {% csrf_token %}
         <div class="product-details-div3">
             <span><input type="number" name="quantity" id="" value="1" class="quantity-box "></span>
-            <span><select class="form-select pack-select" aria-label="Default select example" name="pack-select">
-                    <option selected value="1">Pack of 1</option>
+            <span><select class="form-select pack-select" aria-label="Default select example" id="pack-select" name="pack-select" onchange="pack()">
+                    <option selected value="1">pack of 1</option>
                     <option value="2">Pack of 2</option>
                     <option value="3">Pack of 3</option>
                     <!-- <option value="3">Three</option> -->
                 </select></span>
-            <a href="{% url 'orderpage' %}"><button type="button" class="btn btn-warning btn-buy-now">Buy Now</button></a>
+            <input type="submit" class="btn btn-warning btn-buy-now" value="Buy Now">
         </div>
+        </form>
     </div>
 </div>
 
@@ -113,4 +116,27 @@
         </tr>
     </table>
 </div>
+<script>
+    function pack(){
+        var productimage=document.getElementById('product-page-image')
+        var productchange= document.getElementsByClassName("choti-images")
+        var packselect= document.getElementById('pack-select').value;
+
+        if(packselect==1){
+            document.getElementById('p-price').innerHTML='{{product.price}}';
+            productimage.src=productchange[0].src
+            
+        }
+        else if(packselect==2){
+        document.getElementById('p-price').innerHTML='{{product.pack2}}';
+            productimage.src=productchange[1].src
+            
+        }
+        else{
+        document.getElementById('p-price').innerHTML='{{product.pack3}}';
+            productimage.src=productchange[2].src
+            
+        }
+}
+</script>
 {%endblock%}

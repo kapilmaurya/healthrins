@@ -95,8 +95,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Himvedas Keto Ultra Weight Loss Capsule  </td>
-                  <td>5000</td>
+                  <td>Himvedas Keto Ultra Weight Loss Capsule {{order.product}}  </td>
+                  {% for ord in order %}
+                  <td>{{ord.pack_selection}}</td>
+                  {% endfor %}
                   
                 </tr>
                 <tr>

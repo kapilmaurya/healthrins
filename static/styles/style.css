@@ -12,6 +12,22 @@ body {
     --mobile-small-ss: 14px;
     --mobile-medium-msize: 18px;
 }
+/* global */
+
+.whatsapp-icon{
+    width: 15rem;
+    color: white;
+}
+#wicon{
+    font-size: 3.5rem;
+    color: white;
+    background-color: green;
+    border-radius: 1rem;
+    position: fixed;
+    bottom: 10rem;
+    right: 2rem;
+    z-index: 1000;
+}
 
 .navigation {
     display: flex;
@@ -676,8 +692,37 @@ td{
 }
 
 .contact-container{
+    padding: auto;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+.contact-gap{
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+/* Contact form Designing */
+.owner-details{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    height: 18rem;
+    justify-content: center;
+    row-gap: 10px;
+}
+.show-contact{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.contact-icons{
+    font-size: 4rem;
+    padding: 1rem;
 }
 
 

@@ -5,10 +5,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from urllib import request
 from django.contrib import messages
 from base.models import *
+from base.models import Order_items
 
 # Create your views here.
 def Home(request):
-    return render(request,'base/home.html')
+    product=Product.objects.get()
+    pack_select=request.POST.get('pack-select')
+    print(pack_select)
+    return render(request,'base/home.html',context = {'product' : product})
 
 def Cart(request):
     return render(request,'base/cart.html')
@@ -18,9 +22,6 @@ def Billing(request):
 
 def Login(request):
     return render(request,'base/login.html')
-
-def Product(request):
-    return render(request,'base/product.html')
 
 # creating usercreation form
 def signupPage(request):
@@ -43,10 +44,19 @@ def signupPage(request):
     return render(request,'base/signup.html')
 
 def product(request):
-    product=Product.objects.all()
+    product=Product.objects.get()
+    if request.method=='POST':
+        pack_select=request.POST.get('pack-select')
+        quantity=request.POST.get('quantity')
+        Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select)
+        print(Order_items)
+        return render(request,'base/billing.html')
     return render(request,'base/product.html',context = {'product' : product})
 def orderPage(request):
-    return render(request,'base/billing.html',)
+    order_items=Order_items.objects.all()
+    print(order_items.pack_Selection)
+    # if request.method=='POST':
+    return render(request,'base/billing.html',context ={'order' : order_items})
 
 def privacyPage(request):
     return render(request,'base/privacypolicy.html')
