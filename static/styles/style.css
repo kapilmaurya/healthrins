@@ -522,6 +522,10 @@ ul {
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr;
 }
+.contact-container{
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+}
 
 }
 
@@ -596,6 +600,9 @@ ul {
     .billing-container-grid{
         width: 100%;
         display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-container{
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -695,7 +702,6 @@ td{
     padding: auto;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 .contact-gap{
     padding-top: 2rem;
