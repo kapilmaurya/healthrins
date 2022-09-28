@@ -355,7 +355,9 @@ ul {
     }
     .big-image{
         height: auto;
-        padding-left: 8rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .divider{
@@ -374,10 +376,16 @@ ul {
 
 /* footer area designing for mobile interface*/
 .footerarea{
-    height: 100vh;
-    /* width: 100%; */
-    /* justify-content: flex-start; */
+    height: auto;
     align-items: flex-start;
+}
+.footer-tag{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footer-tag>h5{
+    font-size: 1rem;
 }
 .footer-links{
     padding-left: 2rem;
