@@ -115,7 +115,7 @@ body {
 }
 
 .pack-big {
-    height: 100px;
+    height: auto;
     width: 350px;
 }
 

@@ -30,12 +30,15 @@ var productimage=document.getElementById('product-page-image')
             var productchange= document.getElementsByClassName("choti-images")
             productchange[0].onclick=function(){
                 productimage.src=productchange[0].src
+                document.getElementById('p-price').innerHTML='{{product.price}}';
             }
             productchange[1].onclick=function(){
                 productimage.src=productchange[1].src
+                document.getElementById('p-price').innerHTML='{{product.pack2}}';
             }
             productchange[2].onclick=function(){
                 productimage.src=productchange[2].src
+                document.getElementById('p-price').innerHTML='{{product.pack3}}';
             }
             productchange[3].onclick=function(){
                 productimage.src=productchange[3].src
