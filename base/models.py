@@ -1,10 +1,7 @@
 # from tkinter import CASCADE
-from struct import pack
-from this import d
 from xml.parsers.expat import model
 from django.db import models
 from django.contrib.auth.models import User
-
 # Create your models here.
 
 class Product(models.Model):
@@ -30,7 +27,7 @@ class Profile(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
 
 
-# class User(models.Model):
+# class Account(UserCreationForm):
 #     Username=models.CharField(max_length=100)
 #     Password=models.CharField(max_length=100)
 #     First_name=models.CharField(max_length=100)

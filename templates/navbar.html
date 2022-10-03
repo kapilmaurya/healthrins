@@ -1,6 +1,6 @@
 {% load static %}
 <!-- navbar desinging -->
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0;">
   <!-- navbar desinging -->
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid navigation">
@@ -26,7 +26,7 @@
         </ul>
         
         <div class="user-icons">
-          <a href="#" class="nav-icons" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <a href="{% url 'signup' %}" class="nav-icons">
             <ion-icon name="person-circle"></ion-icon>
           </a>
           <a href="/base/templates/base/cart.html" class="nav-icons">

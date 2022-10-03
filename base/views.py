@@ -1,11 +1,15 @@
+from multiprocessing import context
+import re
 from select import select
 from unicodedata import name
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from urllib import request
+from urllib import request, response
 from django.contrib import messages
 from base.models import *
 from base.models import Order_items
+from base.forms import CreateUserForm
+# from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def Home(request):
@@ -24,24 +28,38 @@ def Login(request):
     return render(request,'base/login.html')
 
 # creating usercreation form
-def signupPage(request):
-    if request.method=='POST':
-        email=request.POST.get('email')
-        username=request.POST.get('username')
-        name= request.POST.get('name')
-        password=request.POST.get('password')
-        user_obj=User.objects.filter(username=email)
-        if user_obj.exists():
-            messages.warning(request,'Email is already taken')
-            return HttpResponseRedirect(request.path_info)
+# def signupPage(request):
+#     form = UserCreationForm()
+#     context={'form':form}
+#     
+#     return render(request,'base/signup.html',context)
+    # if request.method=='POST':
+    #     email=request.POST.get('email')
+    #     username=request.POST.get('username')
+    #     name= request.POST.get('name')
+    #     password=request.POST.get('password')
+    #     user_obj=User.objects.filter(username=email)
+    #     if user_obj.exists():
+    #         messages.warning(request,'Email is already taken')
+    #         return HttpResponseRedirect(request.path_info)
 
-        user=User.objects.create(username=username,email=email,password=password)
-        user.name=name
-        # user.lastname=lastname1
-        user.save()
+    #     user=User.objects.create(username=username,email=email,password=password)
+    #     user.name=name
+    #     # user.lastname=lastname1
+    #     user.save()
     
 
-    return render(request,'base/signup.html')
+def signupPage(request):
+    form=CreateUserForm()
+    if request.method=='POST':
+        form=CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            print('form not valid')
+    context={'form':form}
+    return render(request,'base/account.html',context)
+
 
 def product(request):
     product=Product.objects.get()
