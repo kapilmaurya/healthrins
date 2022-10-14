@@ -26,12 +26,23 @@
         </ul>
         
         <div class="user-icons">
+          {%if user.is_authenticated%}
+          <a href="{% url 'logout' %}" class="nav-icons">
+            <ion-icon name="person-circle"  style="color: green;">logout</ion-icon>
+          </a>
+          {%endif%}
+          {%if not user.is_authenticated%}
           <a href="{% url 'signup' %}" class="nav-icons">
             <ion-icon name="person-circle"></ion-icon>
           </a>
-          <a href="/base/templates/base/cart.html" class="nav-icons">
+          {%endif%}
+          {% if user.is_authenticated %}
+          <h5 style="padding-right: 2rem;">Hi, {{user.username}}</h5>
+          {%endif%}
+          <!-- <a href="/base/templates/base/cart.html" class="nav-icons">
             <ion-icon name="cart"></ion-icon>
-          </a>
+          </a> -->
+
         </div>
       </div>
     </div>

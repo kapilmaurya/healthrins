@@ -103,7 +103,16 @@
                 </tr>
                 <tr>
                   <td>Subtotal</td>
-                  <td>5000</td>
+                  <td>{%if order.pack_selection == 1 %}
+                    {{order.quantity}}*3000
+                    {%endif%}
+                    {%if order.pack_selection == 2 %}
+                    {{order.quantity}}*6000
+                    {%endif%}
+                    {%if order.pack_selection == 3 %}
+                    {{order.quantity}}*8000
+                    {%endif%}
+                  </td>
                   
                 </tr>
                 <tr>

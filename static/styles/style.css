@@ -291,6 +291,10 @@ ul {
     .navigation{
         column-gap: 0;
     }
+    .user-icons{
+        display: flex;
+        flex-direction: column;
+    }
 
     /* making front page responsive */
     .mobile-responsive-container{

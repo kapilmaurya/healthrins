@@ -1,4 +1,5 @@
 # from tkinter import CASCADE
+from email.policy import default
 from xml.parsers.expat import model
 from django.db import models
 from django.contrib.auth.models import User
@@ -43,6 +44,8 @@ class Profile(models.Model):
 
 class Address(models.Model):
     user_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    First_name=models.CharField(max_length=100,default='abc')
+    last_name=models.CharField(max_length=100, default='abc')
     address_line1=models.CharField(max_length=200)
     address_line2=models.CharField(max_length=200)
     postal_code=models.CharField(max_length=100)
@@ -66,6 +69,7 @@ class Cart(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
 
 class Order_items(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     product_id=models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity=models.DecimalField(max_digits=3,decimal_places=2)
     pack_selection= models.IntegerField(default=1)
@@ -76,9 +80,9 @@ class Order_items(models.Model):
     def __str__(self):
         return (f"{self.pk} {self.product_id}")
 
-class Order_details(models.Model):
-    User_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    total=models.DecimalField(max_digits=3,decimal_places=2)
-    # payment_id=models.ForeignKey()
-    created_at=models.DateTimeField(auto_now=True)
-    updated_at=models.DateTimeField(auto_now=True)
+# class Order_details(models.Model):
+#     User_id=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+#     total=models.DecimalField(max_digits=3,decimal_places=2)
+#     # payment_id=models.ForeignKey()
+#     created_at=models.DateTimeField(auto_now=True)
+#     updated_at=models.DateTimeField(auto_now=True)

@@ -23,6 +23,7 @@ body,
 
 		.form_container {
 			margin-top: 20px;
+			/* height: 0; */
 		}
 
 		#form-title{
