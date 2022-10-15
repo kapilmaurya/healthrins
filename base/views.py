@@ -81,17 +81,17 @@ def product(request):
     if request.method=='POST':
         if request.user.is_authenticated:
             live_user=request.user
-        pack_select=request.POST.get('pack-select')
-        quantity=request.POST.get('quantity')
-        Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select,user=live_user)
+            pack_select=request.POST.get('pack-select')
+            quantity=request.POST.get('quantity')
+            Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select,user=live_user)
         # print(Order_items)
         return redirect('orderpage')
     return render(request,'base/product.html',context = {'product' : product})
 
-@login_required(login_url='login/')
-def orderPage(request,id):
-    order_item=Order_items.objects.get(id=pk)
-    print(order_item)
+# @login_required(login_url='login/')
+def orderPage(request):
+    order_item=Order_items.objects.all()
+    # print(order_item)
     # if request.method=='POST':
     return render(request,'base/billing.html',context ={'order' : order_item})
 
