@@ -7,25 +7,25 @@
             <form class="billing-form">
                 <table>
                     <tr>
-            <p>{{select}}</p>
+            <!-- <p>{{select}}</p> -->
             <th class="bill-details-table" colspan="2"><p class="billing-heading">Billing Details</p></th>
                     </tr>
-                    <tr>
-                        <td>
-                            <label for="firstname" class="form-label">First Name</label>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="firstname">
-                        </td>
-                        <td>
-                            <label for="lastname" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="lastname"></td>
+                    <td>
+                      <label for="firstname" class="form-label">First Name</label>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="firstname">
+                    </td>
+                    <td>
+                      <label for="lastname" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1" id="lastname"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <label for="Companyname" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
-                        </td>
+                      <td colspan="2">
+                        <label for="Companyname" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" placeholder="Company Name" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                      </td>
                     </tr>
-                        <tr>
+                    <tr>
+                          <tr>
                             <td colspan="2">
                             <label for="Companyname" class="form-label">Country Code</label>
                             <select class="form-select" id="inputGroupSelect01">
@@ -40,7 +40,7 @@
                         <tr>
                             <td colspan="2">
                                 <label for="streetaddress" class="form-label">Town/City</label>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                                <input type="text" class="form-control" placeholder="Town/City" aria-label="Town/city" aria-describedby="basic-addon1" id="Companyname">
                             </td>
                         </tr>
                     <tr>
@@ -95,31 +95,23 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Himvedas Keto Ultra Weight Loss Capsule {{order.product}}  </td>
-                  {% for ord in order %}
-                  <td>{{ord.pack_selection}}</td>
-                  {% endfor %}
+                  <td>Himvedas Keto Ultra Weight Loss Capsule {{order.product_id}}  </td>
+                  <td>{{order.product_id}}</td>
+                  
                   
                 </tr>
                 <tr>
                   <td>Subtotal</td>
-                  <td>{%if order.pack_selection == 1 %}
-                    {{order.quantity}}*3000
-                    {%endif%}
-                    {%if order.pack_selection == 2 %}
-                    {{order.quantity}}*6000
-                    {%endif%}
-                    {%if order.pack_selection == 3 %}
-                    {{order.quantity}}*8000
-                    {%endif%}
-                  </td>
-                  
-                </tr>
+                  <td>{{order.price}}</td>
+                    
+                  </tr>
+                </td>
                 <tr>
                   <td>Total</td>
-                  <td>5000</td>
+                  <td>{{order.price}}</td>
                 
                 </tr>
+                
 
                 <!-- payment gateways -->
                 <tr>
@@ -142,10 +134,12 @@
               </td>
             </tr>
             <tr>
+              <form action="" method="post">
+                {% csrf_token %}
               <td scope="row" colspan="3">
                 <div class="Buy-now"><button class="btn btn-outline-success Buy-now">Proceed</button></div>
               </td>
-            
+              </form>
             </tr>
               </tbody>
               </table>
@@ -154,4 +148,25 @@
         </div>
     </div>
 </div>
+
+<form action="" method="POST">
+  <script
+      src="https://checkout.razorpay.com/v1/checkout.js"
+      data-key="4XJdfcg751PAbDjGmg7kzJhs" 
+      data-amount=55555
+      data-currency="INR"
+      data-order_id="{{order.price}}*100"
+      data-buttontext="Proceed To Pay"
+      data-name="Acme Corp"
+      data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+      data-image=""
+      data-prefill.name="{{order.Username}}"
+      data-prefill.email="gaurav.kumar@example.com"
+      data-theme.color="#F37254"
+  ></script>
+  <input type="hidden" custom="Hidden Element" name="hidden">
+  </form>
+  
+
+
 {%endblock%}

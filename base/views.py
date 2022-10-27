@@ -1,6 +1,7 @@
 from email import message
 from multiprocessing import context
 from select import select
+
 from unicodedata import name
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,6 +12,7 @@ from base.models import Order_items
 from base.forms import CreateUserForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+import razorpay
 # from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
@@ -68,10 +70,12 @@ def signupPage(request):
         form=CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user=form.cleaned_data.get('username')
+            messages.success(request,'Account is Created for '+user)
+            return redirect('Login')
+
         else:
-            print('form not valid')
-        message(request,"your Account is Created")
-        redirect('Login')
+            messages.error(request,'Password Must Contain ')
     context={'form':form}
     return render(request,'base/account.html',context)
 
@@ -83,16 +87,36 @@ def product(request):
             live_user=request.user
             pack_select=request.POST.get('pack-select')
             quantity=request.POST.get('quantity')
-            Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select,user=live_user)
+            if pack_select=='1':
+                price=product.price
+            elif pack_select=='2':
+                price=product.pack2
+            else:
+                price=product.pack3
+            order_item=Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select,price=price)
         # print(Order_items)
-        return redirect('orderpage')
+            return redirect('orderpage',order_item.id)
+        else:
+            return redirect('signup')
     return render(request,'base/product.html',context = {'product' : product})
 
 # @login_required(login_url='login/')
-def orderPage(request):
-    order_item=Order_items.objects.all()
-    # print(order_item)
-    # if request.method=='POST':
+def orderPage(request,id):
+    order_item=Order_items.objects.get(id=id)
+    print(order_item.price)
+    od_id=Order_items.objects.all()
+    live_user=request.user
+    
+    # razorpay payment gateway
+    if request.method=="POST":
+        DATA = {
+            "amount": order_item.price*100,
+            "currency": "INR",
+            "payment_capture":'1'
+        }
+        client = razorpay.Client(auth=("rzp_test_xCOBfA2GYXWChh", "4XJdfcg751PAbDjGmg7kzJhs"))
+        client.order.create(data=DATA)
+
     return render(request,'base/billing.html',context ={'order' : order_item})
 
 def privacyPage(request):
