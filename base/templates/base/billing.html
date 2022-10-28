@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
 <!-- Billing Content is here -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <div class="container-fluid">
     <div class="billing-container-grid">
         <div class="billing-details container-fluid px-5">
@@ -137,7 +138,7 @@
               <form action="" method="post">
                 {% csrf_token %}
               <td scope="row" colspan="3">
-                <div class="Buy-now"><button class="btn btn-outline-success Buy-now">Proceed</button></div>
+                <div class="Buy-now"><button class="btn btn-outline-success Buy-now" id="rzp-button1">Proceed</button></div>
               </td>
               </form>
             </tr>
@@ -149,24 +150,35 @@
     </div>
 </div>
 
-<form action="" method="POST">
-  <script
-      src="https://checkout.razorpay.com/v1/checkout.js"
-      data-key="4XJdfcg751PAbDjGmg7kzJhs" 
-      data-amount=55555
-      data-currency="INR"
-      data-order_id="{{order.price}}*100"
-      data-buttontext="Proceed To Pay"
-      data-name="Acme Corp"
-      data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
-      data-image=""
-      data-prefill.name="{{order.Username}}"
-      data-prefill.email="gaurav.kumar@example.com"
-      data-theme.color="#F37254"
-  ></script>
-  <input type="hidden" custom="Hidden Element" name="hidden">
-  </form>
-  
+<script>
+  var options = {
+      "key": "rzp_test_IIQTmTylnnMUkg", // Enter the Key ID generated from the Dashboard
+      "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "Healthrins",
+      "description": "Proceed to pay",
+      "image": "https://example.com/your_logo",
+      "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+      "prefill": {
+          "name": "Gaurav Kumar",
+          "email": "gaurav.kumar@example.com",
+          "contact": "9999999999"
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+          "color": "#3399cc"
+      }
+  };
+  var rzp1 = new Razorpay(options);
+  document.getElementById('rzp-button1').onclick = function(e){
+      rzp1.open();
+      e.preventDefault();
+  }
+  </script>
+
 
 
 {%endblock%}

@@ -108,16 +108,16 @@ def orderPage(request,id):
     live_user=request.user
     
     # razorpay payment gateway
-    if request.method=="POST":
-        DATA = {
-            "amount": order_item.price*100,
-            "currency": "INR",
-            "payment_capture":'1'
-        }
-        client = razorpay.Client(auth=("rzp_test_xCOBfA2GYXWChh", "4XJdfcg751PAbDjGmg7kzJhs"))
-        client.order.create(data=DATA)
+    DATA = {
+        "amount": order_item.price*100,
+        "currency": "INR",
+        "payment_capture":1
+    }
+    client = razorpay.Client(auth=("rzp_test_IIQTmTylnnMUkg", "WWMTFLtlL683eVVmelNyZUoK"))
+    payment=client.order.create(data=DATA)
+    print(payment)
 
-    return render(request,'base/billing.html',context ={'order' : order_item})
+    return render(request,'base/billing.html',context ={'order' : order_item , 'payment':payment})
 
 def privacyPage(request):
     return render(request,'base/privacypolicy.html')
