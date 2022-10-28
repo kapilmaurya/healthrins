@@ -14,6 +14,7 @@ class Product(models.Model):
     sku=models.DecimalField(max_digits=3,decimal_places=2)
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return self.name
@@ -78,14 +79,13 @@ class Order_items(models.Model):
     # pack=models.CharField(max_length=20)
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)
-
     def __str__(self):
         return (f"{self.pk} {self.product_id}")
 
 class Order_details(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
-    order_id=models.ForeignKey(Order_items,on_delete=models.CASCADE, null=True)
-    # total=models.DecimalField(max_digits=3,decimal_places=2)
+    order_id=models.CharField(max_length=200 , null=True)
+    total=models.IntegerField(null=True)
     # payment_id=models.ForeignKey()
     created_at=models.DateTimeField(auto_now=True)
     updated_at=models.DateTimeField(auto_now=True)

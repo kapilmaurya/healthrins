@@ -105,8 +105,7 @@ def orderPage(request,id):
     order_item=Order_items.objects.get(id=id)
     print(order_item.price)
     od_id=Order_items.objects.all()
-    live_user=request.user
-    
+    user=request.user
     # razorpay payment gateway
     DATA = {
         "amount": order_item.price*100,
@@ -116,6 +115,7 @@ def orderPage(request,id):
     client = razorpay.Client(auth=("rzp_test_IIQTmTylnnMUkg", "WWMTFLtlL683eVVmelNyZUoK"))
     payment=client.order.create(data=DATA)
     print(payment)
+    Order_details.objects.create(user= user ,order_id=payment['id'], total=payment['amount'])
 
     return render(request,'base/billing.html',context ={'order' : order_item , 'payment':payment})
 
