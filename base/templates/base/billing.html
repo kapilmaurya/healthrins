@@ -21,8 +21,8 @@
                     </tr>
                     <tr>
                       <td colspan="2">
-                        <label for="Companyname" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" placeholder="Company Name" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
+                        <label for="Companyname" class="form-label">Address</label>
+                        <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="basic-addon1" id="Companyname">
                       </td>
                     </tr>
                     <tr>
@@ -115,30 +115,13 @@
                 
 
                 <!-- payment gateways -->
-                <tr>
-                  <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-                      Direct Bank Transfer
-                    </label>
-                  </td>
-                </tr>
-                <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Check Paymnets
-                  </label>
-                </td>
+                
               </tr>
-              <td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                <label class="form-check-label" for="flexRadioDefault3">
-                  Cash on Delivery
-                </label>
-              </td>
-            </tr>
             <tr>
               <form action="" method="post">
                 {% csrf_token %}
               <td scope="row" colspan="3">
-                <div class="Buy-now"><button class="btn btn-outline-success Buy-now" id="rzp-button1">Proceed</button></div>
+                <div class="Buy-now"><button class="btn btn-outline-success Buy-now" id="rzp-button1">Proceed To Pay</button></div>
               </td>
               </form>
             </tr>
@@ -166,7 +149,7 @@
           "contact": "9999999999"
       },
       "notes": {
-          "address": "Razorpay Corporate Office"
+          "address": "Healthrins"
       },
       "theme": {
           "color": "#3399cc"
