@@ -21,13 +21,11 @@
       <img src="/static/images/banner3.png" class="d-block w-100" alt="...">
     </div> -->
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-    data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-    data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
@@ -35,7 +33,7 @@
 <!-- banner area stop -->
 
 <!-- body content -->
-<div class="container mobile-responsive-container" id="about-anchor" >
+<div class="container mobile-responsive-container" id="about-anchor">
   <div class="heading">Healthrins Weight Loss Keto Herbal Supplement</div>
   <div class="para">Our Weight loss Keto capsule is a breakthrough way to burn fat and kick out the problems of
     overweight. You can consume these Keto capsules at any age provided you should be above 18. The blend of natural
@@ -48,55 +46,64 @@
 <hr class="divider">
 
 <!-- product area -->
-<div class="container-fluid mcontainer" id="product-anchor" name="product-anchor" >
-<div class="pr-heading">Our Product</div>
-<div class="product">
-  <div class="pack">
-    <a href="{% url 'product' %}"><img src="/static/images/product_images/pic3.png" alt="" class="product-image" ></a>
-    <div class="product-title">
-      <h6>Weight Loss Keto Herbal Supplement Pack of 3 </h6>
-      <span class="price pr">Rs.10,500</span>&nbsp &nbsp
-      <span class="sale-price pr">Rs.{{product.pack3}}</span>
+<div class="container-fluid mcontainer" id="product-anchor" name="product-anchor">
+  <div class="pr-heading">Our Product</div>
+  <div class="product">
+    <div class="pack">
+      <a href="{% url 'product' %}"><img src="/static/images/product_images/pic3.png" alt="" class="product-image"></a>
+      <div class="product-title">
+        <h6 style="font-family:arial;">Weight Loss Keto Herbal Supplement Pack of 3 </h6>
+        <span class="price pr">Rs.7497</span>&nbsp &nbsp
+        <span class="sale-price pr">Rs.{{product.pack3}}</span>
+        <div><a href="{%url 'product'%}"><button type="button" class="btn btn-warning"
+              style="width: 50%; margin-top: 1rem;">Buy Now</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="pack pack-big">
+      <a href="{% url 'product' %}"><img src="/static/images/product_images/pic1.png" alt="" class="product-image"></a>
+      <div class="product-title">
+        <h6>Weight Loss Keto Herbal Supplement Pack of 1 </h6>
+        <span class="price pr">Rs.2499</span>&nbsp &nbsp
+        <span class="sale-price pr">Rs.{{product.price}}</span>
+        <div><a href="{%url 'product'%}"><button type="button" class="btn btn-warning"
+              style="width: 50%; margin-top: 1rem;">Buy Now</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="pack">
+      <a href="{% url 'product' %}"><img src="/static/images/product_images/pic2.png" alt="" class="product-image"></a>
+      <div class="product-title">
+        <h6>Weight Loss Keto Herbal Supplement Pack of 2 </h6>
+        <span class="price pr">Rs.4998</span>&nbsp &nbsp
+        <span class="sale-price pr">Rs.{{product.pack2}}</span>
+        <div><a href="{%url 'product'%}"><button type="button" class="btn btn-warning"
+              style="width: 50%; margin-top: 1rem;">Buy Now</button></a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pack pack-big">
-    <a href="{% url 'product' %}"><img src="/static/images/product_images/pic1.png" alt="" class="product-image"></a>
-    <div class="product-title">
-      <h6>Weight Loss Keto Herbal Supplement Pack of 1 </h6>
-      <span class="price pr">Rs.4000</span>&nbsp &nbsp
-      <span class="sale-price pr">Rs.{{product.price}}</span>
-    </div>
-  </div>
-  <div class="pack">
-    <a href="{% url 'product' %}"><img src="/static/images/product_images/pic2.png" alt="" class="product-image"></a>
-    <div class="product-title">
-      <h6>Weight Loss Keto Herbal Supplement Pack of 2 </h6>
-      <span class="price pr">Rs.7500</span>&nbsp &nbsp
-      <span class="sale-price pr">Rs.{{product.pack2}}</span>
-    </div>
-  </div>
-</div>
 </div>
 <hr class="divider">
 <!-- product area closed -->
 
 <!-- third section -->
 <div class="container graph-cont">
-<img src="/static/images/graph.png" alt="" class="graph-image">
+  <img src="/static/images/graph.png" alt="" class="graph-image">
 </div>
 <!-- third section close -->
 <hr class="divider">
 
 <!-- review section -->
 <div class="container">
-<div class="review-title heading">Review</div>
-<div class="stars">
-  <ion-icon name="star" class="star active"></ion-icon>
-  <ion-icon name="star" class="star active"></ion-icon>
-  <ion-icon name="star" class="star active"></ion-icon>
-  <ion-icon name="star" class="star active"></ion-icon>
-  <ion-icon name="star" class="star active "></ion-icon>
-</div>
+  <div class="review-title heading">Review</div>
+  <div class="stars">
+    <ion-icon name="star" class="star active"></ion-icon>
+    <ion-icon name="star" class="star active"></ion-icon>
+    <ion-icon name="star" class="star active"></ion-icon>
+    <ion-icon name="star" class="star active"></ion-icon>
+    <ion-icon name="star" class="star active "></ion-icon>
+  </div>
 </div>
 
 
@@ -104,11 +111,20 @@
 <hr class="divider">
 <div class="container-fluid px-5 mobo-30years">
   <div class="the30years-grid">
-    <div class="the30years_container"><img class="the30years-size extra-size" src="/static/images/new_images/healthrins.png" alt=""></div>
-    <div class="the30years_container"><img class="the30years-size extra-size" src="/static/images/new_images/fssai.png" alt=""></div>
-    <div class="the30years_container"><img class="the30years-size" src="/static/images/new_images/30years.png" alt=""></div>
-    <div class="the30years_container"><img class="the30years-size" src="/static/images/new_images/iso9001.png" alt=""></div>
+    <div class="the30years_container"><img class="the30years-size extra-size"
+        src="/static/images/new_images/healthrins.png" alt=""></div>
+    <div class="the30years_container"><img class="the30years-size extra-size" src="/static/images/new_images/fssai.png"
+        alt=""></div>
+    <div class="the30years_container"><img class="the30years-size" src="/static/images/new_images/30years.png" alt="">
+    </div>
+    <div class="the30years_container"><img class="the30years-size" src="/static/images/new_images/iso9001.png" alt="">
+    </div>
   </div>
 </div>
+
+<!-- landing page pixel script -->
+<script>!function (px) { function e(t, e, c) { var n = "", r = ""; try { "" != (n = function (t, e) { try { var c = {}; e.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (t, e, n) { c[e] = n }); return c.hasOwnProperty(t) ? c[t] : "" } catch (t) { return "" } }(t, c)) ? function (t, e, c) { try { var n, r; c ? ((n = new Date).setTime(n.getTime() + 864e5), r = "; expires=" + n.toGMTString()) : r = "", document.cookie = t + "=" + e + r + ";Path=/" } catch (t) { } }(e, n, 1) : n = function (t) { try { var e = document.cookie.match(new RegExp("(^| )" + t + "=([^;]+)")); if (e) return e[2] } catch (t) { } return null }(e), r = "" != n && null != n ? "&" + t + "=" + n : "&" + t + "=" } catch (t) { } return r } var c = "", n = "", r = ""; try { n = e("ad", "acf", c = window.location.href), r = e("col_ci", "col_ci", c) } catch (t) { console.log(t) } var a = "https://ade.clmbtech.com/cde/eventTracking.htm?pixelId=" + px + "&_w=1&_t=2" + n + r + "&rd=" + (new Date).getTime(); (new Image).src = a }('12908');</script>
+<noscript><img height='1' width='1' style='display:none'
+    src='https://ade.clmbtech.com/cde/eventTracking.htm?pixelId=12908&_w=1&_t=2' /></noscript>
 
 {%endblock%}
