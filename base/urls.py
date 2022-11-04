@@ -14,4 +14,5 @@ urlpatterns = [
     path('terms&conditions/', views.termsPage,name='terms&conditions'),
     path('returnrefund/', views.returnPage,name='returnrefund'),
     path('contact/', views.contactPage,name='contact'),
+    path('paymentSuccess/', views.successPage,name='success'),
 ]

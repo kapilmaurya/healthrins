@@ -45,7 +45,7 @@
         <form action="" method="post">
             {% csrf_token %}
         <div class="product-details-div3">
-            <span><input type="number" name="quantity" id="" value="1" class="quantity-box "></span>
+            <span><input type="number" name="quantity" id="quantity" value="1" class="quantity-box "></span>
             <span><select class="form-select pack-select" aria-label="Default select example" id="pack-select" name="pack-select" onchange="pack()">
                     <option selected value="1">pack of 1</option>
                     <option value="2">Pack of 2</option>
@@ -61,7 +61,7 @@
 <hr class="divider">
 <div class="des-review">
     <button type="button" class="btn btn-light desc-heading">Description</button>
-    <button type="button" class="btn btn-light desc-heading">Review(0)</button>
+    <!-- <button type="button" class="btn btn-light desc-heading">Review(0)</button> -->
 </div>
 <!-- product description table -->
 <div class="container-fluid px-5 py-5">
@@ -72,47 +72,39 @@
         </tr>
         <tr>
             <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Healthrins</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Packaging Size</td>
+            <td>60 Capsule</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Packaging Type</td>
+            <td>Bottle</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Country of Origin</td>
+            <td>Made in India</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Green Coffee Extract</td>
+            <td>100mg/Capsule</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Garcinia Cambagia Extract</td>
+            <td>300mg/Capsule</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Green Coffee Extract with ECGC</td>
+            <td>100mg/Capsule</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Storage</td>
+            <td>Store in Cool and Dry Place</td>
         </tr>
         <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
-        </tr>
-        <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
-        </tr>
-        <tr>
-            <td>Brand</td>
-            <td>Himvedas</td>
+            <td>Pack of</td>
+            <td id="quantity-display">1</td>
         </tr>
     </table>
 </div>
@@ -124,17 +116,20 @@
 
         if(packselect==1){
             document.getElementById('p-price').innerHTML='{{product.price}}';
-            productimage.src=productchange[0].src
+            productimage.src=productchange[0].src;
+            document.getElementById('quantity-display').innerHTML='1';
             
         }
         else if(packselect==2){
         document.getElementById('p-price').innerHTML='{{product.pack2}}';
-            productimage.src=productchange[1].src
+            productimage.src=productchange[1].src;
+            document.getElementById('quantity-display').innerHTML='2'
             
         }
         else{
         document.getElementById('p-price').innerHTML='{{product.pack3}}';
-            productimage.src=productchange[2].src
+            productimage.src=productchange[2].src;
+            document.getElementById('quantity-display').innerHTML='3'
             
         }
 }

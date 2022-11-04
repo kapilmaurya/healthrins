@@ -73,7 +73,7 @@ class Cart(models.Model):
 
 class Order_items(models.Model):
     product_id=models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
-    quantity=models.DecimalField(max_digits=3,decimal_places=2)
+    quantity=models.IntegerField(default=1)
     pack_selection= models.IntegerField(default=1)
     price=models.IntegerField(default=3500)
     # pack=models.CharField(max_length=20)

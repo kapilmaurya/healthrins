@@ -82,25 +82,26 @@ def signupPage(request):
 
 def product(request):
     product=Product.objects.get()
+    order_item=Order_items.objects.all()
     if request.method=='POST':
         if request.user.is_authenticated:
             live_user=request.user
             pack_select=request.POST.get('pack-select')
-            quantity=request.POST.get('quantity')
+            quantity=int(request.POST.get('quantity'))
             if pack_select=='1':
-                price=product.price
+                price=product.price*quantity
             elif pack_select=='2':
-                price=product.pack2
+                price=product.pack2*quantity
             else:
-                price=product.pack3
+                price=product.pack3*quantity
             order_item=Order_items.objects.create(product_id=product,quantity=quantity,pack_selection=pack_select,price=price)
         # print(Order_items)
             return redirect('orderpage',order_item.id)
         else:
             return redirect('signup')
-    return render(request,'base/product.html',context = {'product' : product})
+    return render(request,'base/product.html',context = {'product' : product,'order_item':order_item})
 
-# @login_required(login_url='login/')
+@login_required(login_url='login/')
 def orderPage(request,id):
     order_item=Order_items.objects.get(id=id)
     print(order_item.price)
@@ -128,3 +129,6 @@ def returnPage(request):
 
 def contactPage(request):
     return render(request,'base/contact.html')
+
+def successPage(request):
+    return render(request,'base/PaymentSucces.html')

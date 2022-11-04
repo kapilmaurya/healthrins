@@ -746,5 +746,12 @@ td{
     padding: 1rem;
 }
 
+/* Payment Success Page */
+.success{
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
 
 
